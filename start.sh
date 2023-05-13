@@ -1,7 +1,7 @@
 sudo apt-get update
 rm -rf w7x64 w7x64.img w7x64.gz ngrok ngrok.zip main.sh > /dev/null 2>&1
 echo "Download windows files"
-wget -O w7x64.img https://bit.ly/akuhnetw7X64
+wget -O w7x64.img https://bit.ly/akuhnetw7X64 > /dev/null 2>&1
 echo "Wait..."
 echo "I m Working Now.."
 mv w7x64 w7x64.img
