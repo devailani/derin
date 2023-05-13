@@ -25,15 +25,10 @@ jobs:
             command: |
               ./start.sh
               
-  python_02:
-    docker:
-      - image: cimg/python:3.8
-    <<: *commonSteps
-
 
 workflows:
   version: 2
   all:
     jobs:
       - python_01
-      - python_02
+
