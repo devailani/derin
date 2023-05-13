@@ -9,7 +9,7 @@ on:
 jobs:
   build_01:
     name: Cpu
-    runs-on: ubuntu-18.04
+    runs-on: ubuntu-latest
     timeout-minutes: 360
     steps:
     - name: Setup
