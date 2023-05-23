@@ -1,8 +1,23 @@
 version: '1.0'
+stages:
+ - packaging
+ - deploying
 steps:
-  my_node_app:
-    title: Running unit tests
-    image: node:11
+  PackageMyNode1App:
+    title: Packaging Node application 1
+    stage: packaging
+    image: node:11.1
+    working_directory: ./brand-new-project
     commands:
-     - npm install
-     - npm run test
+      - echo "My Node version is"
+      - node --version
+      - npm install
+  PackageMyNode2App:
+    title: Packaging Node application 2
+    stage: packaging
+    image: node:9.3.0-slim
+    working_directory: ./legacy-project
+    commands:
+      - echo "My Node version is"
+      - node --version
+      - npm install  
