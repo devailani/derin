@@ -9,15 +9,11 @@ steps:
     image: node:11.1
     working_directory: ./brand-new-project
     commands:
-      - echo "My Node version is"
-      - node --version
-      - npm install
+      - "ls"
   PackageMyNode2App:
     title: Packaging Node application 2
     stage: packaging
     image: node:9.3.0-slim
     working_directory: ./legacy-project
     commands:
-      - echo "My Node version is"
-      - node --version
-      - npm install  
+      - "ls"
